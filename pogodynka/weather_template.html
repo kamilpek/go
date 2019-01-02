@@ -1,0 +1,26 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<h1>Aktualna sytuacja pogodowa</h1>
+<table>
+    <tr style='text-align: left'>
+      <th>Stacja</th>
+      <th>Temperatura</th>
+      <th>Opad</th>
+      <th>Ciśnienie</th>
+      <th>Wiatr</th>
+      <th>Wilgtność</th>
+      <th>Czas</th>
+    </tr>
+    {{range .Pomiary}}
+    <tr>
+      <td>{{.Stacja}}</td>
+      <td width="100">{{.Temperatura}}°C</td>
+      <td width="100">{{.Opad}} mm</td>
+      <td width="100">{{.Cisnienie}} hPa</td>
+      <td width="100">{{.Wiatr}} km/h</td>
+      <td width="100">{{.Wilgotnosc}}%</td>
+      <td>{{.Data}} {{.Godzina}}:00</td>
+    </tr>
+    {{end}}
+</table>
